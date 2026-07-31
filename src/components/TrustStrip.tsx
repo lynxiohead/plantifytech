@@ -1,27 +1,25 @@
 "use client";
 
-import ScrollReveal from "./ScrollReveal";
 import { IoCheckmarkCircle } from "react-icons/io5";
-
-const items = [
-  "Beta open now",
-  "Vetted farmers",
-  "Real-time insights",
-  "Secure and compliant",
-];
+import { TRUST_ITEMS } from "@/lib/content";
 
 export default function TrustStrip() {
+  const items = [...TRUST_ITEMS, ...TRUST_ITEMS];
+
   return (
-    <section className="border-y border-black/5 bg-white py-8">
-      <div className="container flex flex-wrap items-center justify-center gap-4 md:gap-8">
-        {items.map((item, index) => (
-          <ScrollReveal key={item} delay={index * 0.06}>
-            <div className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)]">
+    <section className="overflow-hidden border-y border-black/5 bg-white py-6">
+      <div className="relative">
+        <div className="marquee-track gap-10 px-4">
+          {items.map((item, index) => (
+            <div
+              key={`${item}-${index}`}
+              className="inline-flex shrink-0 items-center gap-2.5 px-4 text-[15px] text-[var(--text-muted)]"
+            >
               <IoCheckmarkCircle size={18} className="text-[var(--text)]" />
               {item}
             </div>
-          </ScrollReveal>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

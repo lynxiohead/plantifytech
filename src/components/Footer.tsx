@@ -1,55 +1,84 @@
 import Link from "next/link";
-import Image from "next/image";
 import { IoArrowForward, IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
-
-const LOGO_SRC =
-  "https://framerusercontent.com/images/edOaf9VeW0UmbMZ5qbIh9nT4L8.png";
+import { FramerLogo } from "./ui";
 
 export default function Footer() {
   return (
     <footer className="border-t border-black/5 bg-white pt-16 pb-8">
       <div className="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="mb-4 inline-flex items-center gap-2">
-            <Image src={LOGO_SRC} alt="PlantifyTech" width={36} height={36} />
+          <Link href="/" className="mb-5 inline-flex items-center">
+            <FramerLogo size={40} variant="full" />
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--text-muted)]">
             Connecting farmers and investors to grow a sustainable future together.
           </p>
-          <div className="mt-4 flex gap-3 text-[var(--text-muted)]">
-            <IoLogoFacebook size={18} />
-            <IoLogoInstagram size={18} />
-            <IoLogoLinkedin size={18} />
+          <div className="mt-5 flex gap-4 text-[var(--text-muted)]">
+            <IoLogoFacebook size={20} className="transition-colors hover:text-[var(--accent)]" />
+            <IoLogoInstagram size={20} className="transition-colors hover:text-[var(--accent)]" />
+            <IoLogoLinkedin size={20} className="transition-colors hover:text-[var(--accent)]" />
           </div>
         </div>
 
         <div>
           <h4 className="display-title mb-4 text-sm text-[var(--text)]">Quick links</h4>
-          <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-            <li><Link href="/#how-it-works">How It Works</Link></li>
-            <li><Link href="/#about">About</Link></li>
-            <li><Link href="/#investors">For Investors</Link></li>
-            <li><Link href="/#farmers">For Farmers</Link></li>
+          <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
+            <li>
+              <Link href="/#how-it-works" className="hover:text-[var(--accent)]">
+                How It Works
+              </Link>
+            </li>
+            <li>
+              <Link href="/#about" className="hover:text-[var(--accent)]">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/#investors" className="hover:text-[var(--accent)]">
+                For Investors
+              </Link>
+            </li>
+            <li>
+              <Link href="/#farmers" className="hover:text-[var(--accent)]">
+                For Farmers
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="display-title mb-4 text-sm text-[var(--text)]">Support</h4>
-          <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-            <li><Link href="/#help">FAQs</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/contact">Privacy Policy</Link></li>
+          <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
+            <li>
+              <Link href="/contact#help" className="hover:text-[var(--accent)]">
+                FAQs
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[var(--accent)]">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-[var(--accent)]">
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <h4 className="display-title mb-4 text-sm text-[var(--text)]">Contact</h4>
-          <ul className="space-y-2 text-sm text-[var(--text-muted)]">
+          <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
             <li>
-              <a href="mailto:hello@plantify.tech">hello@plantify.tech</a>
+              <a href="mailto:hello@plantify.tech" className="hover:text-[var(--accent)]">
+                hello@plantify.tech
+              </a>
             </li>
             <li>
-              <a href="tel:+27824878855">+27 82 487 8855</a>
+              <a href="tel:+27824878855" className="hover:text-[var(--accent)]">
+                +27 82 487 8855
+              </a>
             </li>
             <li>Pretoria, South Africa</li>
           </ul>

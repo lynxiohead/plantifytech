@@ -1,30 +1,26 @@
-import Link from "next/link";
-import { IoArrowForward } from "react-icons/io5";
+"use client";
+
+import ScrollReveal from "./ScrollReveal";
+import { PillButton, SectionCopy, SectionTitle } from "./ui";
 
 export default function CtaSection() {
   return (
     <section className="section-pad bg-white">
       <div className="container text-center">
-        <h2 className="display-title text-[clamp(2rem,4vw,3rem)]">
-          Ready to invest smarter?
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[var(--text-muted)]">
-          Dedicated to enabling power to our people. Join PlantifyTech today.
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link href="/contact" className="btn-pill btn-pill-dark text-sm md:text-base">
-            Join Beta
-            <span className="btn-arrow">
-              <IoArrowForward size={14} />
-            </span>
-          </Link>
-          <Link href="/contact" className="btn-pill btn-pill-light text-sm md:text-base">
-            Contact Us
-            <span className="btn-arrow">
-              <IoArrowForward size={14} />
-            </span>
-          </Link>
-        </div>
+        <ScrollReveal>
+          <SectionTitle>Ready to invest smarter?</SectionTitle>
+        </ScrollReveal>
+        <ScrollReveal delay={0.08}>
+          <SectionCopy className="mt-4">
+            Dedicated to enabling power to our people. Join PlantifyTech today.
+          </SectionCopy>
+        </ScrollReveal>
+        <ScrollReveal delay={0.14}>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <PillButton href="/contact" label="Join Beta" variant="dark" />
+            <PillButton href="/contact" label="Contact Us" variant="light" />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

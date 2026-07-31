@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const LOGO_SRC =
-  "https://framerusercontent.com/images/edOaf9VeW0UmbMZ5qbIh9nT4L8.png";
+import { ASSETS } from "@/lib/content";
 
 export default function LoadingScreen() {
   return (
@@ -16,37 +14,37 @@ export default function LoadingScreen() {
     >
       <motion.div
         className="relative flex flex-col items-center gap-6"
-        initial={{ opacity: 0, scale: 0.85 }}
+        initial={{ opacity: 0, scale: 0.88 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.div
-          className="relative flex h-24 w-24 items-center justify-center rounded-2xl bg-white shadow-[0_20px_60px_rgba(15,20,25,0.12)]"
-          animate={{ scale: [1, 1.05, 1] }}
+          className="relative flex h-28 w-28 items-center justify-center rounded-[28px] bg-white shadow-[0_24px_80px_rgba(10,31,26,0.14)]"
+          animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
         >
           <motion.div
-            className="absolute inset-0 rounded-2xl border border-black/5"
+            className="absolute inset-0 rounded-[28px] border-2 border-transparent"
             animate={{ rotate: 360 }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             style={{
-              borderTopColor: "rgba(10,10,10,0.35)",
+              borderTopColor: "rgba(31, 107, 74, 0.5)",
               borderRightColor: "transparent",
               borderBottomColor: "transparent",
               borderLeftColor: "transparent",
             }}
           />
           <Image
-            src={LOGO_SRC}
+            src={ASSETS.logoIcon}
             alt="PlantifyTech"
-            width={56}
-            height={56}
+            width={72}
+            height={72}
             priority
-            className="relative z-10 h-14 w-14 object-contain"
+            className="relative z-10 h-[72px] w-[72px] object-contain"
           />
         </motion.div>
         <motion.p
-          className="text-sm font-medium tracking-[0.2em] text-[var(--text-muted)] uppercase"
+          className="text-sm font-semibold tracking-[0.22em] text-[var(--text-muted)] uppercase"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
