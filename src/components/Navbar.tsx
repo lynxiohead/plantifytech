@@ -20,12 +20,12 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
-      <nav className="glass-nav relative flex w-full max-w-[860px] items-center justify-between rounded-full px-3 py-3 md:px-5 md:py-3.5">
-        <Link href="/" className="flex shrink-0 items-center pl-0.5 md:pl-1">
-          <FramerLogo
-            variant="full"
-            className="h-10 w-auto sm:h-11 md:h-[3.35rem]"
-          />
+      <nav className="glass-nav relative flex w-full max-w-[920px] items-center justify-between gap-3 rounded-full px-3 py-3.5 md:px-5 md:py-4">
+        <Link
+          href="/"
+          className="flex h-12 shrink-0 items-center sm:h-[3.25rem] md:h-14"
+        >
+          <FramerLogo variant="nav" className="h-full w-auto" />
         </Link>
 
         <ul className="hidden items-center gap-7 md:flex">

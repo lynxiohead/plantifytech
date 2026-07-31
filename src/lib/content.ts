@@ -2,6 +2,7 @@ const asset = (path: string) => `/assets/${path}`;
 
 export const ASSETS = {
   logo: asset("logos/EXTLOGO1.png"),
+  logoNav: asset("logos/EXTLOGO1-nav.png"),
   logoIcon: asset("logos/BLACK2.png"),
   logoMark: asset("logos/BLACK1.png"),
   hero: {

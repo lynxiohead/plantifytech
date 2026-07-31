@@ -3,6 +3,7 @@ import { ASSETS } from "./content";
 function collectImageUrls(): string[] {
   const urls = new Set<string>([
     ASSETS.logo,
+    ASSETS.logoNav,
     ASSETS.logoIcon,
     ASSETS.logoMark,
     ASSETS.hero.primary,

@@ -79,7 +79,7 @@ export function FramerLogo({
   className = "",
 }: {
   size?: number;
-  variant?: "full" | "icon";
+  variant?: "full" | "icon" | "nav";
   className?: string;
 }) {
   if (variant === "icon") {
@@ -90,6 +90,19 @@ export function FramerLogo({
         width={size}
         height={size}
         className={`object-contain ${className}`}
+        priority
+      />
+    );
+  }
+
+  if (variant === "nav") {
+    return (
+      <Image
+        src={ASSETS.logoNav}
+        alt="PlantifyTech"
+        width={440}
+        height={91}
+        className={`h-full w-auto max-w-none object-contain ${className}`}
         priority
       />
     );
