@@ -76,9 +76,11 @@ export function SectionCopy({
 export function FramerLogo({
   size = 32,
   variant = "full",
+  className = "",
 }: {
   size?: number;
   variant?: "full" | "icon";
+  className?: string;
 }) {
   if (variant === "icon") {
     return (
@@ -87,7 +89,7 @@ export function FramerLogo({
         alt="PlantifyTech"
         width={size}
         height={size}
-        className="object-contain"
+        className={`object-contain ${className}`}
         priority
       />
     );
@@ -97,10 +99,10 @@ export function FramerLogo({
     <Image
       src={ASSETS.logo}
       alt="PlantifyTech"
-      width={Math.round(size * 4.5)}
-      height={size}
-      className="h-auto w-auto object-contain"
-      style={{ height: size, width: "auto" }}
+      width={280}
+      height={64}
+      className={`w-auto max-w-none object-contain ${className}`}
+      style={className ? undefined : { height: size, width: "auto" }}
       priority
     />
   );
