@@ -39,15 +39,17 @@ export default function Navbar() {
         </ul>
 
         <div className="relative z-10 flex shrink-0 items-center md:justify-self-end">
-          <Link
-            href="/contact"
-            className={`btn-pill btn-pill-dark hidden text-[14px] md:inline-flex ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
-          >
-            Contact
-            <span className="btn-arrow">
-              <IoArrowForward size={14} />
-            </span>
-          </Link>
+          <div className="hidden md:block">
+            <Link
+              href="/contact"
+              className={`btn-pill btn-pill-dark text-[14px] ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
+            >
+              Contact
+              <span className="btn-arrow">
+                <IoArrowForward size={14} />
+              </span>
+            </Link>
+          </div>
 
           <button
             type="button"
