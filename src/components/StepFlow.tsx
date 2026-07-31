@@ -49,7 +49,7 @@ export default function StepFlow({
   introCopy,
 }: StepFlowProps) {
   const [active, setActive] = useState(0);
-  const mobilePanelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const mobilePanelRefs = useRef<(HTMLElement | null)[]>([]);
   const desktopPanelRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const goToStep = (index: number) => {
