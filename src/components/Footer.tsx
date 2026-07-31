@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IoArrowForward, IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
+import { IoLogoFacebook, IoLogoInstagram, IoLogoLinkedin } from "react-icons/io5";
 import { FramerLogo } from "./ui";
 
 export default function Footer() {
@@ -85,16 +85,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="container mt-12 flex flex-col items-start justify-between gap-4 border-t border-black/5 pt-6 md:flex-row md:items-center">
+      <div className="container mt-12 border-t border-black/5 pt-6">
         <p className="text-sm text-[var(--text-soft)]">
           PlantifyTech 2026. All rights reserved.
         </p>
-        <Link href="/contact" className="btn-pill btn-pill-dark text-sm">
-          Contact Us
-          <span className="btn-arrow">
-            <IoArrowForward size={14} />
-          </span>
-        </Link>
       </div>
     </footer>
   );
