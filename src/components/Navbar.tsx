@@ -20,20 +20,17 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
-      <nav className="glass-nav relative flex w-full max-w-[920px] items-center justify-between gap-3 rounded-full px-3 py-3.5 md:px-5 md:py-4">
-        <Link
-          href="/"
-          className="flex h-12 shrink-0 items-center sm:h-[3.25rem] md:h-14"
-        >
+      <nav className="glass-nav relative grid w-full max-w-[920px] grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-full px-3 py-3 md:px-5 md:py-3.5">
+        <Link href="/" className="flex h-9 shrink-0 items-center justify-self-start md:h-10">
           <FramerLogo variant="nav" className="h-full w-auto" />
         </Link>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center justify-center gap-6 justify-self-center md:flex lg:gap-7">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[14px] font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
+                className="text-[14px] font-medium whitespace-nowrap text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
               >
                 {link.label}
               </Link>
@@ -41,7 +38,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden justify-self-end md:block">
           <Link
             href="/contact"
             className={`btn-pill btn-pill-dark text-[14px] ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
@@ -55,7 +52,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/5 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center justify-self-end rounded-full border border-black/5 md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >

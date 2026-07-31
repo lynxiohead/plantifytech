@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="hero-bg-overlay" />
 
       <div className="container grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-        <div className="mx-auto flex max-w-xl flex-col items-start text-left">
+        <div className="mx-auto flex max-w-xl flex-col items-start pt-10 text-left md:pt-14 lg:pt-16">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
