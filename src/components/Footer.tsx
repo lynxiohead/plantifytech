@@ -7,8 +7,8 @@ export default function Footer() {
     <footer className="border-t border-black/5 bg-white pt-16 pb-8">
       <div className="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="mb-5 inline-flex items-center">
-            <FramerLogo size={40} variant="full" />
+          <Link href="/" className="mb-5 inline-flex h-9 items-center md:h-10">
+            <FramerLogo variant="nav" className="h-full w-auto" />
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--text-muted)]">
             Connecting farmers and investors to grow a sustainable future together.

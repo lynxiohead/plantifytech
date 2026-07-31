@@ -20,12 +20,12 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
-      <nav className="glass-nav relative grid w-full max-w-[920px] grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-full px-3 py-3 md:px-5 md:py-3.5">
-        <Link href="/" className="flex h-9 shrink-0 items-center justify-self-start md:h-10">
+      <nav className="glass-nav relative flex w-full max-w-[920px] items-center justify-between rounded-full px-3 py-3 md:grid md:grid-cols-[1fr_auto_1fr] md:px-5 md:py-3.5">
+        <Link href="/" className="flex h-9 shrink-0 items-center md:h-10">
           <FramerLogo variant="nav" className="h-full w-auto" />
         </Link>
 
-        <ul className="hidden items-center justify-center gap-6 justify-self-center md:flex lg:gap-7">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex lg:gap-7">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -38,26 +38,26 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden justify-self-end md:block">
+        <div className="flex shrink-0 items-center md:justify-self-end">
           <Link
             href="/contact"
-            className={`btn-pill btn-pill-dark text-[14px] ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
+            className={`btn-pill btn-pill-dark hidden text-[14px] md:inline-flex ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
           >
             Contact
             <span className="btn-arrow">
               <IoArrowForward size={14} />
             </span>
           </Link>
-        </div>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center justify-self-end rounded-full border border-black/5 md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <IoClose size={20} /> : <IoMenu size={20} />}
-        </button>
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/5 md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <IoClose size={20} /> : <IoMenu size={20} />}
+          </button>
+        </div>
 
         {open && (
           <div className="absolute top-[calc(100%+0.75rem)] right-0 left-0 rounded-[24px] border border-black/5 bg-white p-4 shadow-xl md:hidden">

@@ -412,13 +412,30 @@ body {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
+.partners-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: partners-marquee 36s linear infinite;
+}
+
+@keyframes partners-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .marquee-track,
-  .showcase-track {
+  .showcase-track,
+  .partners-marquee-track {
     animation: none;
   }
 

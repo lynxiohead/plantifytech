@@ -6,6 +6,8 @@ import { SectionTitle } from "./ui";
 import { WHY_CARDS, ASSETS } from "@/lib/content";
 
 export default function WhyChoose() {
+  const partners = [...ASSETS.partners, ...ASSETS.partners];
+
   return (
     <section className="section-pad bg-[var(--bg-soft)]">
       <div className="container">
@@ -39,7 +41,29 @@ export default function WhyChoose() {
           <p className="mt-14 text-center text-[12px] font-semibold tracking-[0.16em] text-[var(--text-soft)] uppercase">
             Supported and Recognized By
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+
+          <div className="relative mt-8 overflow-hidden md:hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[var(--bg-soft)] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[var(--bg-soft)] to-transparent" />
+            <div className="partners-marquee-track gap-10 px-2">
+              {partners.map((partner, index) => (
+                <div
+                  key={`${partner.name}-${index}`}
+                  className="inline-flex shrink-0 items-center px-3"
+                >
+                  <Image
+                    src={partner.src}
+                    alt={partner.name}
+                    width={140}
+                    height={48}
+                    className="h-10 w-auto max-w-[120px] object-contain opacity-80 grayscale"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 hidden flex-wrap items-center justify-center gap-x-10 gap-y-6 md:flex">
             {ASSETS.partners.map((partner) => (
               <Image
                 key={partner.name}
