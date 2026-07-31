@@ -38,25 +38,27 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex shrink-0 items-center md:justify-self-end">
+        {/* Mobile: burger only — no contact pill on the bar */}
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/5 md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <IoClose size={20} /> : <IoMenu size={20} />}
+        </button>
+
+        {/* Desktop: contact only */}
+        <div className="hidden md:block md:justify-self-end">
           <Link
             href="/contact"
-            className={`btn-pill btn-pill-dark hidden text-[14px] md:inline-flex ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
+            className={`btn-pill btn-pill-dark text-[14px] ${isContact ? "ring-2 ring-[var(--accent)]/20" : ""}`}
           >
             Contact
             <span className="btn-arrow">
               <IoArrowForward size={14} />
             </span>
           </Link>
-
-          <button
-            type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/5 md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <IoClose size={20} /> : <IoMenu size={20} />}
-          </button>
         </div>
 
         {open && (
