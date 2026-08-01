@@ -121,21 +121,21 @@ export const AUDIENCES = [
     body: "Access the capital you need to grow your farm without the traditional barriers of bank loans.",
     badge: "No collateral",
     note: "Access to capital without traditional requirements",
-    image: ASSETS.illustrations.planting,
+    image: ASSETS.slides[1],
   },
   {
     title: "Impact investors",
     body: "Generate financial returns while contributing to sustainable agriculture and food security in communities.",
     badge: "Dual impact",
     note: "Financial returns plus social good",
-    image: ASSETS.illustrations.market,
+    image: ASSETS.slides[2],
   },
   {
     title: "Portfolio diversifiers",
     body: "Add real agricultural assets to your portfolio with transparent, AI-tracked performance.",
     badge: "Real assets",
     note: "Diversification beyond stocks and crypto",
-    image: ASSETS.slides[2],
+    image: ASSETS.slides[3],
   },
 ];
 
@@ -150,11 +150,11 @@ export const WHY_CARDS = [
   {
     label: "WE PROVIDE",
     title: "Capital for farmers",
-    image: ASSETS.illustrations.planting,
+    image: ASSETS.hero.images[1],
   },
   {
     label: "WE PROVIDE",
     title: "Exposure for farm projects",
-    image: ASSETS.illustrations.field,
+    image: ASSETS.hero.images[3],
   },
 ];
