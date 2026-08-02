@@ -34,12 +34,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#investors" className="hover:text-[var(--accent)]">
+              <Link href="/users/investors" className="hover:text-[var(--accent)]">
                 For Investors
               </Link>
             </li>
             <li>
-              <Link href="/#farmers" className="hover:text-[var(--accent)]">
+              <Link href="/users/farmers" className="hover:text-[var(--accent)]">
                 For Farmers
               </Link>
             </li>
