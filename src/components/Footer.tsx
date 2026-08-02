@@ -60,7 +60,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-[var(--accent)]">
+              <Link href="/privacy-policy" className="hover:text-[var(--accent)]">
                 Privacy Policy
               </Link>
             </li>
