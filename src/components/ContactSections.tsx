@@ -1,9 +1,81 @@
 "use client";
 
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { IoMail, IoCall, IoLocation } from "react-icons/io5";
 
 export default function ContactForm() {
+  const [status, setStatus] = useState<null | "idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setErrorMessage(null);
+    setStatus("sending");
+
+    const form = e.currentTarget; // capture before any await (React event pooling)
+    const fd = new FormData(form);
+
+    const payload = {
+      f_name: ((fd.get("f_name") as string) || "").trim(),
+      email: ((fd.get("email") as string) || "").trim(),
+      p_number: ((fd.get("p_number") as string) || "").trim(),
+      subject: ((fd.get("subject") as string) || "").trim(),
+      message: ((fd.get("message") as string) || "").trim(),
+    };
+
+    // Basic validations
+    if (!payload.f_name || payload.f_name.length < 2) {
+      setErrorMessage("Please provide a valid name.");
+      setStatus("error");
+      return;
+    }
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email);
+    if (!emailOk) {
+      setErrorMessage("Please provide a valid email address.");
+      setStatus("error");
+      return;
+    }
+
+    // Phone: optional, but if provided must be digits between 7-15
+    const digits = payload.p_number.replace(/\D/g, "");
+    if (payload.p_number && (digits.length < 7 || digits.length > 15)) {
+      setErrorMessage("Please provide a valid phone number (7–15 digits).");
+      setStatus("error");
+      return;
+    }
+
+    // Message length cap
+    if (payload.message && payload.message.length > 2000) {
+      setErrorMessage("Message is too long. Please keep it under 2000 characters.");
+      setStatus("error");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/cta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => null);
+      if (res.ok && data && data.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        console.error("CTA post failed", data);
+        setErrorMessage(data?.error || "Failed to submit. Please try again.");
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMessage("Server error. Please try again later.");
+      setStatus("error");
+    }
+  }
+
   return (
     <section className="section-pad bg-white">
       <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -22,12 +94,14 @@ export default function ContactForm() {
         <ScrollReveal delay={0.1}>
           <form
             className="card-soft grid gap-4 p-6 md:p-8"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
+            aria-live="polite"
           >
             <div className="grid gap-4 md:grid-cols-2">
               <label className="grid gap-2 text-sm">
                 <span>Full name*</span>
                 <input
+                  name="f_name"
                   required
                   placeholder="Enter your full name"
                   className="rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-black/25"
@@ -36,6 +110,7 @@ export default function ContactForm() {
               <label className="grid gap-2 text-sm">
                 <span>Email address*</span>
                 <input
+                  name="email"
                   required
                   type="email"
                   placeholder="hello@yourbrand.com"
@@ -48,6 +123,7 @@ export default function ContactForm() {
               <label className="grid gap-2 text-sm">
                 <span>Phone number</span>
                 <input
+                  name="p_number"
                   placeholder="Your contact number"
                   className="rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-black/25"
                 />
@@ -55,6 +131,7 @@ export default function ContactForm() {
               <label className="grid gap-2 text-sm">
                 <span>Subject</span>
                 <input
+                  name="subject"
                   placeholder="How can we help you?"
                   className="rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-black/25"
                 />
@@ -64,18 +141,29 @@ export default function ContactForm() {
             <label className="grid gap-2 text-sm">
               <span>Message</span>
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Write your message here..."
                 className="rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-black/25"
               />
             </label>
 
-            <button
-              type="submit"
-              className="mt-2 inline-flex w-fit rounded-full bg-[var(--bg-soft)] px-6 py-3 text-sm font-medium text-[var(--text-muted)] transition hover:bg-[#e8eef5]"
-            >
-              Send Message
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                type="submit"
+                className="mt-2 inline-flex w-fit rounded-full bg-[var(--bg-soft)] px-6 py-3 text-sm font-medium text-[var(--text-muted)] transition hover:bg-[#e8eef5]"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "Sending..." : "Send Message"}
+              </button>
+
+              {status === "success" && (
+                <p className="text-sm font-medium text-green-600">Message sent. Thank you!</p>
+              )}
+              {status === "error" && (
+                <p className="text-sm font-medium text-red-600">Failed to send. Try again.</p>
+              )}
+            </div>
           </form>
         </ScrollReveal>
       </div>
