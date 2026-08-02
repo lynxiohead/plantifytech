@@ -24,6 +24,7 @@ export const ASSETS = {
     market: asset("ILLUSTRATIONS/ILLUSTRATION2.jpg"),
     farmer: asset("ILLUSTRATIONS/ILLUSTRATION3.jpg"),
     field: asset("ILLUSTRATIONS/ILLUSTRATION4.jpg"),
+    aboutStory: asset("about-story.jpg"),
   },
   slides: [
     asset("slides/SLIDE1.jpg"),
@@ -275,6 +276,24 @@ export const INVESTOR_FAQS = [
   {
     question: "Is the platform currently open to new investors?",
     answer: "Yes, our Beta program is open. You can sign up today to browse upcoming Southern African farming projects.",
+  },
+];
+
+export const FOUNDERS_TEAM = [
+  {
+    name: "Yadav Singh",
+    role: "Founder & CPCO",
+    image: ASSETS.founders.primary,
+  },
+  {
+    name: "Abisola O. Adenyanju",
+    role: "Co-Founder & CEO",
+    image: ASSETS.founders.abisola,
+  },
+  {
+    name: "Abrahame Mola",
+    role: "Co-Founder & CDO",
+    image: ASSETS.founders.abrahame,
   },
 ];
 

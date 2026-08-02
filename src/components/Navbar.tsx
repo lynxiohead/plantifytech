@@ -7,9 +7,9 @@ import { IoMenu, IoClose, IoArrowForward } from "react-icons/io5";
 import { FramerLogo } from "./ui";
 
 const links = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/users/farmers", label: "For Farmers" },
-  { href: "/users/investors", label: "For Investors" },
+  { href: "/#investors", label: "For Investors" },
   { href: "/contact#help", label: "Help" },
 ];
 
