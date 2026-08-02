@@ -7,8 +7,8 @@ import { IoMenu, IoClose, IoArrowForward } from "react-icons/io5";
 import { FramerLogo } from "./ui";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#farmers", label: "For Farmers" },
+  { href: "/about", label: "About" },
+  { href: "/users/farmers", label: "For Farmers" },
   { href: "/#investors", label: "For Investors" },
   { href: "/contact#help", label: "Help" },
 ];
@@ -30,7 +30,9 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[14px] font-medium whitespace-nowrap text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
+                className={`text-[14px] font-medium whitespace-nowrap transition-colors hover:text-[var(--accent)] ${
+                  pathname === link.href ? "text-[var(--accent)] font-semibold" : "text-[var(--text-muted)]"
+                }`}
               >
                 {link.label}
               </Link>

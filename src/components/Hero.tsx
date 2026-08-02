@@ -73,8 +73,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.34 }}
           >
-            <PillButton href="/#investors" label="I'm an investor" variant="dark" />
-            <PillButton href="/#farmers" label="I'm a farmer" variant="light" />
+            <PillButton href="#investors" label="I'm an investor" variant="dark" />
+            <PillButton href="/users/farmers" label="I'm a farmer" variant="light" />
           </motion.div>
         </div>
 
