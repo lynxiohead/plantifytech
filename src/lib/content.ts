@@ -59,6 +59,7 @@ export const ASSETS = {
     { name: "Zimbabwe", src: asset("COUNTRIES/Flag_of_Zimbabwe.svg.webp") },
   ],
   video: asset("VIDEOS/plantify-skit.mp4"),
+  video2: asset("VIDEOS/video2.mp4"),
 };
 
 export const INVESTOR_STEPS = [

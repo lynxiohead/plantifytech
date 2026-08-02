@@ -6,15 +6,18 @@ import { PillButton } from "./ui";
 
 export default function AboutHero() {
   return (
-    <section className="hero-sky relative flex min-h-[85svh] items-center pt-32 pb-20 md:pb-28">
-      <div
-        className="hero-bg-layer"
-        style={{
-          backgroundImage: `url(${ASSETS.hero.images[0]})`,
-          opacity: 0.12,
-        }}
-      />
-      <div className="hero-bg-overlay" />
+    <section className="hero-sky relative flex min-h-[85svh] items-center overflow-hidden pt-32 pb-20 md:pb-28">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster={ASSETS.hero.images[0]}
+        className="absolute inset-0 z-[-2] h-full w-full object-cover"
+      >
+        <source src={ASSETS.video2 || "/assets/VIDEOS/video2.mp4"} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 z-[-1] bg-gradient-to-b from-white/35 via-white/50 to-white/95" />
 
       <div className="container relative z-10 mx-auto max-w-6xl">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">

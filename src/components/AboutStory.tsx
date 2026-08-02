@@ -28,7 +28,7 @@ export default function AboutStory() {
             <div className="relative mx-auto w-full max-w-md lg:max-w-none">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[var(--radius-xl)] border border-[var(--line)] shadow-lg">
                 <Image
-                  src={ASSETS.illustrations.aboutStory}
+                  src={ASSETS.illustrations?.aboutStory || "/assets/about-story.jpg"}
                   alt="PlantifyTech logo and mission"
                   fill
                   className="object-cover"
