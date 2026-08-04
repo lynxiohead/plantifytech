@@ -19,3 +19,7 @@ export function parseLoadingVariant(value: string): LoadingVariant | null {
   }
   return null;
 }
+
+export function parseLoadingVariantParam(value: string): LoadingVariant {
+  return parseLoadingVariant(value) ?? 1;
+}

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import LoadingPreviewClient, {
-  parseVariantParam,
-} from "./LoadingPreviewClient";
+import { parseLoadingVariantParam } from "@/lib/loadingVariant";
+import LoadingPreviewClient from "./LoadingPreviewClient";
 
 export const metadata: Metadata = {
   title: "Loading Screen Preview",
@@ -14,5 +13,5 @@ export default async function LoadingPreviewPage({
   params: Promise<{ variant: string }>;
 }) {
   const { variant } = await params;
-  return <LoadingPreviewClient variant={parseVariantParam(variant)} />;
+  return <LoadingPreviewClient variant={parseLoadingVariantParam(variant)} />;
 }

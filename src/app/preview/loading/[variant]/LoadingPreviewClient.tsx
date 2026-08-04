@@ -5,7 +5,6 @@ import Link from "next/link";
 import { LoadingScreenByVariant } from "@/components/LoadingScreen";
 import {
   LOADING_VARIANT_LABELS,
-  parseLoadingVariant,
   type LoadingVariant,
 } from "@/lib/loadingVariant";
 
@@ -70,8 +69,4 @@ export default function LoadingPreviewClient({
       </div>
     </div>
   );
-}
-
-export function parseVariantParam(value: string): LoadingVariant {
-  return parseLoadingVariant(value) ?? 1;
 }
