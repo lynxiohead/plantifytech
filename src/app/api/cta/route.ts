@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase/admin";
+import { getSupabaseAdmin } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
     }
 
-    const { error } = await supabaseAdmin.from("CTA_Clients").insert({
+    const { error } = await getSupabaseAdmin().from("CTA_Clients").insert({
       f_name,
       email,
       p_number: p_number || null,
