@@ -21,7 +21,7 @@ export default function QuoteSection() {
             </div>
             <blockquote>
               <p className="display-title text-[clamp(1.5rem,3vw,2.25rem)] leading-snug text-[var(--text)]">
-                &ldquo;We built Plantify to connect farmers who need funding with
+                &ldquo;We built Plantify Tech to connect farmers who need funding with
                 everyday people who want to invest — growing farms, communities,
                 and returns together.&rdquo;
               </p>

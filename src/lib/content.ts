@@ -17,12 +17,9 @@ export const ASSETS = {
       asset("hero/HERO4.jpg"),
     ],
   },
+  /** App screens without PLANTIFY.TECH in the logo (MOCKUP3, 9, 11 only). */
   mockups: [
-    asset("mockups/MOCKUP1.png"),
-    asset("mockups/MOCKUP2.png"),
     asset("mockups/MOCKUP3.png"),
-    asset("mockups/MOCKUP4.png"),
-    asset("mockups/MOCKUP5.png"),
     asset("mockups/MOCKUP9.png"),
     asset("mockups/MOCKUP11.png"),
   ],
@@ -72,21 +69,21 @@ export const INVESTOR_STEPS = [
     id: "01",
     title: "Browse farm projects",
     body: "Explore vetted farming projects that need funding.",
-    image: ASSETS.mockups[3],
+    image: ASSETS.mockups[0],
     imageFit: "contain" as const,
   },
   {
     id: "02",
     title: "Invest from R100",
     body: "Choose any amount from R100 and fund projects you believe in.",
-    image: ASSETS.mockups[4],
+    image: ASSETS.mockups[1],
     imageFit: "contain" as const,
   },
   {
     id: "03",
     title: "Track and earn returns",
     body: "Monitor real-time growth with AI insights and receive returns at harvest.",
-    image: ASSETS.mockups[5],
+    image: ASSETS.mockups[2],
     imageFit: "contain" as const,
   },
 ];
