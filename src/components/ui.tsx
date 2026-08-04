@@ -99,11 +99,11 @@ export function FramerLogo({
   if (variant === "nav") {
     return (
       <Image
-        src={ASSETS.logoOneBlack}
+        src={ASSETS.logoNav}
         alt={SITE_NAME}
-        width={160}
-        height={48}
-        className={`h-full w-auto max-w-none rounded-md object-contain ${className}`}
+        width={280}
+        height={64}
+        className={`h-full w-auto max-w-none object-contain ${className}`}
         priority
       />
     );

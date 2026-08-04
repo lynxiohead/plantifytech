@@ -1,13 +1,15 @@
+import assetsManifest from "./assets-manifest.json";
+
 const asset = (path: string) => `/assets/${path}`;
 
 export const ASSETS = {
-  logo: asset("logos/OneBlack.png"),
-  logoNav: asset("logos/OneBlack.png"),
-  logoOneBlack: asset("logos/OneBlack.png"),
+  logo: assetsManifest.logo,
+  logoNav: assetsManifest.logoNav,
+  logoOneBlack: assetsManifest.logoOneBlack,
   logoIcon: asset("logos/BLACK2.png"),
-  logoMark: asset("logos/OneBlack.png"),
+  logoMark: assetsManifest.logoOneBlack,
   logoWhite: asset("logos/NEWLOGO_WHITE.png"),
-  logoStacked: asset("logos/OneBlack.png"),
+  logoStacked: assetsManifest.logoOneBlack,
   logoBadge: asset("logos/LOGO9.jpg"),
   hero: {
     primary: asset("hero/pexels-sammccool47-33786601.jpg"),
@@ -18,15 +20,7 @@ export const ASSETS = {
       asset("hero/HERO4.jpg"),
     ],
   },
-  mockups: [
-    asset("MOBILE MOCKUPS/MOCKUP1.png"),
-    asset("MOBILE MOCKUPS/MOCKUP2.png"),
-    asset("MOBILE MOCKUPS/MOCKUP3.png"),
-    asset("MOBILE MOCKUPS/MOCKUP4.png"),
-    asset("MOBILE MOCKUPS/Mockup5.png"),
-    asset("MOBILE MOCKUPS/MOCKUP9.png"),
-    asset("MOBILE MOCKUPS/MOCKUP11.png"),
-  ],
+  mockups: assetsManifest.mockups,
   illustrations: {
     planting: asset("ILLUSTRATIONS/ILLUSTRATION1.jpg"),
     market: asset("ILLUSTRATIONS/ILLUSTRATION2.jpg"),
