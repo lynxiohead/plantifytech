@@ -17,6 +17,12 @@ export const CORE_KEYWORDS = [
   "agricultural investment platform",
   "farm investment South Africa",
   "agricultural fintech",
+  "agri fintech",
+  "fintech South Africa",
+  "fintech investment platform",
+  "agricultural fintech platform",
+  "farm fintech",
+  "mobile fintech South Africa",
   "agritech investment",
   "crowd farming",
   "agricultural crowdfunding",
@@ -67,7 +73,7 @@ export function buildMetadata({
   const url = absoluteUrl(typeof path === "string" && path.startsWith("/") ? path : ROUTES[path as keyof typeof ROUTES] ?? path);
   const fullTitle =
     path === "home" || path === "/"
-      ? `${SITE_NAME} | Farm & Agricultural Investment Platform South Africa`
+      ? `${SITE_NAME} | Agricultural Fintech & Farm Investment Platform South Africa`
       : `${title} | ${SITE_NAME}`;
 
   const keywordSet = [...new Set([...keywords, ...CORE_KEYWORDS])];
@@ -122,9 +128,9 @@ export function buildMetadata({
 
 export const PAGE_SEO = {
   home: {
-    title: "Farm & Agricultural Investment Platform",
+    title: "Farm & Agricultural Fintech Investment Platform",
     description:
-      "Plantify Tech is South Africa's agricultural investment platform — invest in vetted farm projects from R100, track real crops with AI insights, and earn returns at harvest. Like Easy Equities for agriculture: simple, transparent, mobile-first farm investing for everyday people.",
+      "Plantify Tech is South Africa's agricultural fintech platform — invest in vetted farm projects from R100, track real crops with AI insights, and earn returns at harvest. A mobile fintech app for farm investment: simple, transparent, and built like Easy Equities for agriculture.",
     path: "home" as const,
     keywords: [
       "Easy Equities agriculture alternative",
@@ -132,6 +138,8 @@ export const PAGE_SEO = {
       "mobile farm investment app",
       "invest in crops and livestock",
       "agriculture investment app South Africa",
+      "agri fintech startup",
+      "fintech for farmers and investors",
     ],
   },
   about: {
