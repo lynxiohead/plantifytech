@@ -34,7 +34,7 @@ export default function AudienceSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </div>
-                <div className="audience-card-body p-6 md:p-7">
+                <div className="p-6 md:p-7">
                   <h3 className="display-title text-[1.35rem] md:text-2xl">
                     {item.title}
                   </h3>
