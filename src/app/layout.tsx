@@ -7,6 +7,7 @@ import {
   websiteSchema,
 } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
 import ClientShell from "@/components/ClientShell";
 import "./globals.css";
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="en-ZA" className={`${inter.variable} ${bricolage.variable} h-full`}>
       <body className="min-h-full antialiased">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <GoogleAnalytics />
         <ClientShell>{children}</ClientShell>
       </body>
     </html>
