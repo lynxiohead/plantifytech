@@ -15,7 +15,7 @@ export default function AudienceSection() {
 
         <ScrollReveal delay={0.08}>
           <SectionCopy className="mt-4">
-            From first-time investors to seasoned farmers — PlantifyTech is built
+            From first-time investors to seasoned farmers — Plantify Tech is built
             for everyone who believes in growing real returns from real agriculture.
           </SectionCopy>
         </ScrollReveal>

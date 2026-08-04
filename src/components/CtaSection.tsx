@@ -12,7 +12,7 @@ export default function CtaSection() {
         </ScrollReveal>
         <ScrollReveal delay={0.08}>
           <SectionCopy className="mt-4">
-            Dedicated to enabling power to our people. Join PlantifyTech today.
+            Dedicated to enabling power to our people. Join Plantify Tech today.
           </SectionCopy>
         </ScrollReveal>
         <ScrollReveal delay={0.14}>

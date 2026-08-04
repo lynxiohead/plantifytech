@@ -13,7 +13,7 @@ export default function QuoteSection() {
             <div className="relative mx-auto h-[140px] w-[140px] overflow-hidden rounded-[var(--radius-media)] ring-4 ring-[var(--bg-soft)] md:mx-0 md:h-[160px] md:w-[160px]">
               <Image
                 src={ASSETS.founders.primary}
-                alt="PlantifyTech founder"
+                alt="Plantify Tech founder"
                 fill
                 className="object-cover rounded-[var(--radius-media-inner)]"
                 sizes="160px"

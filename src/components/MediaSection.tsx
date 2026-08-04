@@ -10,13 +10,13 @@ export default function MediaSection() {
       <div className="container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <ScrollReveal>
           <p className="text-[13px] font-semibold tracking-[0.14em] text-[var(--accent)] uppercase">
-            See PlantifyTech in action
+            See Plantify Tech in action
           </p>
           <SectionTitle align="left" className="mt-3">
             Power to the people, on the ground
           </SectionTitle>
           <SectionCopy className="mx-0 mt-4 max-w-lg text-left">
-            Watch how PlantifyTech is connecting communities, farmers, and
+            Watch how Plantify Tech is connecting communities, farmers, and
             investors to grow a more inclusive agricultural economy.
           </SectionCopy>
         </ScrollReveal>

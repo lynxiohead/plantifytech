@@ -113,7 +113,7 @@ export default function Hero() {
                 >
                   <Image
                     src={mockupAt(mockupIndex, 0)}
-                    alt="PlantifyTech mobile app screen"
+                    alt="Plantify Tech mobile app screen"
                     width={520}
                     height={640}
                     priority
@@ -132,7 +132,7 @@ export default function Hero() {
             <div className="media-frame mockup-shell mockup-shell-secondary">
               <Image
                 src={mockupAt(mockupIndex, 1)}
-                alt="PlantifyTech app feature screen"
+                alt="Plantify Tech app feature screen"
                 width={280}
                 height={560}
                 className="media-image media-image-contain"
@@ -148,7 +148,7 @@ export default function Hero() {
             <div className="media-frame mockup-shell mockup-shell-secondary">
               <Image
                 src={mockupAt(mockupIndex, 2)}
-                alt="PlantifyTech app dashboard screen"
+                alt="Plantify Tech app dashboard screen"
                 width={240}
                 height={520}
                 className="media-image media-image-contain"

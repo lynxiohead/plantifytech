@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-black/5 bg-white pt-16 pb-8">
       <div className="container grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="mb-5 inline-flex h-9 items-center md:h-10">
+          <Link href="/" className="mb-5 inline-flex h-14 items-center sm:h-[3.75rem] md:h-10">
             <FramerLogo variant="nav" className="h-full w-auto" />
           </Link>
           <p className="max-w-xs text-sm leading-relaxed text-[var(--text-muted)]">
@@ -92,7 +92,7 @@ export default function Footer() {
 
       <div className="container mt-12 border-t border-black/5 pt-6">
         <p className="text-sm text-[var(--text-soft)]">
-          PlantifyTech 2026. All rights reserved.
+          Plantify Tech 2026. All rights reserved.
         </p>
       </div>
     </footer>

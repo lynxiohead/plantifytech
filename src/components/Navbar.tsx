@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
       <nav className="glass-nav relative flex w-full max-w-[920px] items-center justify-between rounded-full px-3 py-3 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:px-5 md:py-3.5">
-        <Link href="/" className="relative z-10 flex h-9 shrink-0 items-center md:h-10">
+        <Link href="/" className="relative z-10 flex h-14 shrink-0 items-center sm:h-[3.75rem] md:h-10">
           <FramerLogo variant="nav" className="h-full w-auto" />
         </Link>
 

@@ -11,13 +11,13 @@ const sections = [
     id: "introduction",
     title: "Introduction",
     content:
-      "Your privacy is important to us. This privacy policy explains how we collect, use, and protect your information when you use the Plantify.tech platform and services. By accessing or using the platform, you agree to the practices described in this policy.",
+      "Your privacy is important to us. This privacy policy explains how we collect, use, and protect your information when you use the Plantify Tech platform and services. By accessing or using the platform, you agree to the practices described in this policy.",
   },
   {
     id: "personal-information",
     title: "Personal Information",
     content:
-      "When you create a Plantify.tech account or interact with our services, we may collect information such as your name, email address, contact details, and account preferences.",
+      "When you create a Plantify Tech account or interact with our services, we may collect information such as your name, email address, contact details, and account preferences.",
   },
   {
     id: "usage-data",
@@ -29,13 +29,13 @@ const sections = [
     id: "integration-financial",
     title: "Integration and Financial Data",
     content:
-      "If you connect third-party applications, smart plant sensors, or financial integrations (such as for premium subscriptions), certain data may be processed to provide tailored insights, automation, and analytics within the Plantify.tech platform.",
+      "If you connect third-party applications, smart plant sensors, or financial integrations (such as for premium subscriptions), certain data may be processed to provide tailored insights, automation, and analytics within the Plantify Tech platform.",
   },
   {
     id: "how-we-use",
     title: "How We Use Your Information",
     content:
-      "We use collected information to improve Plantify.tech and provide a better user experience. This includes:",
+      "We use collected information to improve Plantify Tech and provide a better user experience. This includes:",
     list: [
       "Providing platform functionality and analytics.",
       "Improving performance and developing new features.",
@@ -54,7 +54,7 @@ const sections = [
     id: "sharing",
     title: "Sharing of Information",
     content:
-      "We do not sell your personal information. Information may only be shared with trusted service providers who help operate the Plantify.tech platform, maintain our infrastructure, or provide support services. These partners are strictly required to maintain the confidentiality and security of your data.",
+      "We do not sell your personal information. Information may only be shared with trusted service providers who help operate the Plantify Tech platform, maintain our infrastructure, or provide support services. These partners are strictly required to maintain the confidentiality and security of your data.",
   },
   {
     id: "data-retention",
@@ -79,7 +79,7 @@ const sections = [
     id: "cookies",
     title: "Cookies and Tracking Technologies",
     content:
-      "Plantify.tech may use cookies and similar technologies to improve the user experience, remember your preferences, and analyze website performance. You can adjust your browser settings to control or disable cookies if preferred.",
+      "Plantify Tech may use cookies and similar technologies to improve the user experience, remember your preferences, and analyze website performance. You can adjust your browser settings to control or disable cookies if preferred.",
   },
   {
     id: "third-party",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoArrowForward } from "react-icons/io5";
 import { ASSETS } from "@/lib/content";
+import { SITE_NAME } from "@/lib/seo";
 
 type PillButtonProps = {
   href: string;
@@ -86,7 +87,7 @@ export function FramerLogo({
     return (
       <Image
         src={ASSETS.logoIcon}
-        alt="PlantifyTech"
+        alt={SITE_NAME}
         width={size}
         height={size}
         className={`object-contain ${className}`}
@@ -99,7 +100,7 @@ export function FramerLogo({
     return (
       <Image
         src={ASSETS.logoNav}
-        alt="PlantifyTech"
+        alt={SITE_NAME}
         width={440}
         height={91}
         className={`h-full w-auto max-w-none object-contain ${className}`}
@@ -111,7 +112,7 @@ export function FramerLogo({
   return (
     <Image
       src={ASSETS.logo}
-      alt="PlantifyTech"
+      alt={SITE_NAME}
       width={280}
       height={64}
       className={`w-auto max-w-none object-contain ${className}`}

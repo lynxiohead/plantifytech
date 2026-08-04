@@ -12,7 +12,7 @@ export default function WhyChoose() {
     <section className="section-pad bg-[var(--bg-soft)]">
       <div className="container">
         <ScrollReveal>
-          <SectionTitle>Why choose PlantifyTech?</SectionTitle>
+          <SectionTitle>Why choose Plantify Tech?</SectionTitle>
         </ScrollReveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ASSETS } from "@/lib/content";
+import { SITE_NAME } from "@/lib/seo";
 
 export default function LoadingScreen() {
   return (
@@ -19,7 +20,7 @@ export default function LoadingScreen() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.div
-          className="relative flex h-28 w-28 items-center justify-center rounded-[28px] bg-white shadow-[0_24px_80px_rgba(10,31,26,0.14)]"
+          className="relative flex h-32 w-32 items-center justify-center rounded-[28px] bg-white shadow-[0_24px_80px_rgba(10,31,26,0.14)] sm:h-36 sm:w-36"
           animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
         >
@@ -36,20 +37,20 @@ export default function LoadingScreen() {
           />
           <Image
             src={ASSETS.logoIcon}
-            alt="PlantifyTech"
-            width={72}
-            height={72}
+            alt={SITE_NAME}
+            width={88}
+            height={88}
             priority
-            className="relative z-10 h-[72px] w-[72px] object-contain"
+            className="relative z-10 h-20 w-20 object-contain sm:h-24 sm:w-24"
           />
         </motion.div>
         <motion.p
-          className="text-sm font-semibold tracking-[0.22em] text-[var(--text-muted)] uppercase"
+          className="text-base font-semibold tracking-[0.12em] text-[var(--text-muted)] sm:text-lg"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          PlantifyTech
+          {SITE_NAME}
         </motion.p>
       </motion.div>
     </motion.div>
