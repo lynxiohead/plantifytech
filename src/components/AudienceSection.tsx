@@ -29,12 +29,12 @@ export default function AudienceSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover rounded-[var(--radius-media-inner)]"
+                    className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 </div>
-                <div className="p-6 md:p-7">
+                <div className="audience-card-body p-6 md:p-7">
                   <h3 className="display-title text-[1.35rem] md:text-2xl">
                     {item.title}
                   </h3>
