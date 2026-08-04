@@ -98,7 +98,7 @@ export function buildMetadata({
       description,
       images: [
         {
-          url: absoluteUrl("/assets/logos/EXTLOGO1.png"),
+          url: absoluteUrl("/assets/logos/OneBlack.png"),
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} — agricultural investment platform`,
@@ -109,7 +109,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [absoluteUrl("/assets/logos/EXTLOGO1.png")],
+      images: [absoluteUrl("/assets/logos/OneBlack.png")],
     },
     robots: {
       index: true,
@@ -210,7 +210,7 @@ export function organizationSchema() {
     name: SITE_NAME,
     legalName: "Plantify Tech",
     url: SITE_URL,
-    logo: absoluteUrl("/assets/logos/EXTLOGO1.png"),
+    logo: absoluteUrl("/assets/logos/OneBlack.png"),
     email: SITE_EMAIL,
     telephone: SITE_PHONE,
     description:

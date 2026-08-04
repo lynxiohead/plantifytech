@@ -9,7 +9,6 @@ import {
 import JsonLd from "@/components/JsonLd";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
-import ClientShell from "@/components/ClientShell";
 import "./globals.css";
 
 const inter = Inter({
@@ -52,7 +51,7 @@ export default function RootLayout({
       <body className="min-h-full antialiased">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <GoogleAnalytics />
-        <ClientShell>{children}</ClientShell>
+        {children}
       </body>
     </html>
   );

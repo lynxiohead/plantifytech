@@ -97,74 +97,80 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 mx-auto max-w-[380px]"
-          >
-            <div className="media-frame mockup-shell mockup-shell-primary">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={mockupAt(mockupIndex, 0)}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.01 }}
-                  transition={{ duration: 0.45 }}
-                >
-                  <Image
-                    src={mockupAt(mockupIndex, 0)}
-                    alt="Plantify Tech mobile app screen"
-                    width={520}
-                    height={640}
-                    priority
-                    className="media-image media-image-contain mx-auto max-w-[340px] md:max-w-[360px]"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </motion.div>
+          <div className="mockup-carousel-body">
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 mx-auto max-w-[380px]"
+            >
+              <div className="media-frame mockup-shell mockup-shell-primary">
+                <div className="mockup-primary-frame">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={mockupAt(mockupIndex, 0)}
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 1.01 }}
+                      transition={{ duration: 0.45 }}
+                      className="flex h-full w-full items-center justify-center"
+                    >
+                      <Image
+                        src={mockupAt(mockupIndex, 0)}
+                        alt="Plantify Tech mobile app screen"
+                        width={520}
+                        height={640}
+                        priority
+                        className="media-image media-image-contain max-h-[340px] w-auto max-w-[340px] md:max-h-[360px] md:max-w-[360px]"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+            </motion.div>
 
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="mockup-secondary hidden md:block"
-          >
-            <div className="media-frame mockup-shell mockup-shell-secondary">
-              <Image
-                src={mockupAt(mockupIndex, 1)}
-                alt="Plantify Tech app feature screen"
-                width={280}
-                height={560}
-                className="media-image media-image-contain"
-              />
-            </div>
-          </motion.div>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="mockup-secondary hidden md:block"
+            >
+              <div className="media-frame mockup-shell mockup-shell-secondary mockup-side-frame">
+                <Image
+                  src={mockupAt(mockupIndex, 1)}
+                  alt="Plantify Tech app feature screen"
+                  width={280}
+                  height={560}
+                  className="media-image media-image-contain max-h-[280px] w-auto"
+                />
+              </div>
+            </motion.div>
 
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            className="mockup-tertiary hidden lg:block"
-          >
-            <div className="media-frame mockup-shell mockup-shell-secondary">
-              <Image
-                src={mockupAt(mockupIndex, 2)}
-                alt="Plantify Tech app dashboard screen"
-                width={240}
-                height={520}
-                className="media-image media-image-contain"
-              />
-            </div>
-          </motion.div>
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="mockup-tertiary hidden lg:block"
+            >
+              <div className="media-frame mockup-shell mockup-shell-secondary mockup-side-frame">
+                <Image
+                  src={mockupAt(mockupIndex, 2)}
+                  alt="Plantify Tech app dashboard screen"
+                  width={240}
+                  height={520}
+                  className="media-image media-image-contain max-h-[240px] w-auto"
+                />
+              </div>
+            </motion.div>
 
-          <div className="absolute -left-6 top-12 hidden h-28 w-28 rounded-full bg-[var(--accent-light)]/20 blur-3xl lg:block" />
-          <div className="absolute -right-4 bottom-16 hidden h-36 w-36 rounded-full bg-[var(--gold)]/25 blur-3xl lg:block" />
+            <div className="absolute -left-6 top-12 hidden h-28 w-28 rounded-full bg-[var(--accent-light)]/20 blur-3xl lg:block" />
+            <div className="absolute -right-4 bottom-16 hidden h-36 w-36 rounded-full bg-[var(--gold)]/25 blur-3xl lg:block" />
+          </div>
 
-          <div className="relative z-20 mt-6 flex flex-wrap items-center justify-center gap-2 px-2">
+          <div className="mockup-dots">
             {ASSETS.mockups.map((mockup, index) => (
               <button
                 key={mockup}
                 type="button"
                 aria-label={`Show app screen ${index + 1}`}
+                aria-current={index === mockupIndex}
                 onClick={() => setMockupIndex(index)}
                 className={`h-2.5 rounded-full transition-all ${
                   index === mockupIndex

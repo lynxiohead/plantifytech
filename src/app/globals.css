@@ -317,7 +317,40 @@ body {
 
 .mockup-stage {
   position: relative;
-  min-height: 520px;
+  min-height: 560px;
+  padding-bottom: 2.75rem;
+}
+
+.mockup-carousel-body {
+  position: relative;
+  min-height: 480px;
+}
+
+.mockup-primary-frame {
+  display: flex;
+  height: 380px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-side-frame {
+  display: flex;
+  min-height: 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-dots {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-inline: 0.5rem;
 }
 
 .mockup-shell {

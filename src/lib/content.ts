@@ -1,12 +1,13 @@
 const asset = (path: string) => `/assets/${path}`;
 
 export const ASSETS = {
-  logo: asset("logos/EXTLOGO1.png"),
-  logoNav: asset("logos/EXTLOGO1-nav-transparent.png"),
+  logo: asset("logos/OneBlack.png"),
+  logoNav: asset("logos/OneBlack.png"),
+  logoOneBlack: asset("logos/OneBlack.png"),
   logoIcon: asset("logos/BLACK2.png"),
-  logoMark: asset("logos/BLACK1.png"),
+  logoMark: asset("logos/OneBlack.png"),
   logoWhite: asset("logos/NEWLOGO_WHITE.png"),
-  logoStacked: asset("logos/PLANTIFY6.png"),
+  logoStacked: asset("logos/OneBlack.png"),
   logoBadge: asset("logos/LOGO9.jpg"),
   hero: {
     primary: asset("hero/pexels-sammccool47-33786601.jpg"),
@@ -17,11 +18,14 @@ export const ASSETS = {
       asset("hero/HERO4.jpg"),
     ],
   },
-  /** App screens without PLANTIFY.TECH in the logo (MOCKUP3, 9, 11 only). */
   mockups: [
-    asset("mockups/MOCKUP3.png"),
-    asset("mockups/MOCKUP9.png"),
-    asset("mockups/MOCKUP11.png"),
+    asset("MOBILE MOCKUPS/MOCKUP1.png"),
+    asset("MOBILE MOCKUPS/MOCKUP2.png"),
+    asset("MOBILE MOCKUPS/MOCKUP3.png"),
+    asset("MOBILE MOCKUPS/MOCKUP4.png"),
+    asset("MOBILE MOCKUPS/Mockup5.png"),
+    asset("MOBILE MOCKUPS/MOCKUP9.png"),
+    asset("MOBILE MOCKUPS/MOCKUP11.png"),
   ],
   illustrations: {
     planting: asset("ILLUSTRATIONS/ILLUSTRATION1.jpg"),
