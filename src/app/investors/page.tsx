@@ -3,13 +3,35 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StepFlow from "@/components/StepFlow";
 import CtaSection from "@/components/CtaSection";
+import JsonLd from "@/components/JsonLd";
 import { INVESTOR_STEPS } from "@/lib/content";
 import { SectionCopy, SectionEyebrow, SectionTitle } from "@/components/ui";
+import {
+  buildMetadata,
+  breadcrumbSchema,
+  financialServiceSchema,
+  PAGE_SEO,
+  webPageSchema,
+} from "@/lib/seo";
 import { IoCash, IoShieldCheckmark } from "react-icons/io5";
 
+export const metadata = buildMetadata(PAGE_SEO.investors);
+
 export default function InvestorsPage() {
+  const seo = PAGE_SEO.investors;
+
   return (
     <>
+      <JsonLd
+        data={[
+          financialServiceSchema(),
+          webPageSchema({ title: seo.title, description: seo.description, path: "/investors" }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "For Investors", path: "/investors" },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="sky-bg pt-28">
         <section className="section-pad bg-white">
@@ -53,10 +75,7 @@ export default function InvestorsPage() {
 
         <section className="section-pad bg-white pb-24">
           <div className="container">
-            <StepFlow
-              label="How it works: For Investors"
-              steps={INVESTOR_STEPS}
-            />
+            <StepFlow label="How it works: For Investors" steps={INVESTOR_STEPS} />
           </div>
         </section>
 
