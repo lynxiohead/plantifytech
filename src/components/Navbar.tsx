@@ -7,16 +7,26 @@ import { IoMenu, IoClose, IoArrowForward } from "react-icons/io5";
 import { FramerLogo } from "./ui";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#farmers", label: "For Farmers" },
-  { href: "/#investors", label: "For Investors" },
-  { href: "/contact#help", label: "Help" },
+  { href: "/about", label: "About" },
+  { href: "/farmers", label: "For Farmers" },
+  { href: "/investors", label: "For Investors" },
+  { href: "/help", label: "Help" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isContact = pathname === "/contact";
+
+  const linkClass = (href: string) => {
+    const active =
+      pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+    return `text-[14px] font-medium whitespace-nowrap transition-colors ${
+      active
+        ? "text-[var(--accent)]"
+        : "text-[var(--text-muted)] hover:text-[var(--accent)]"
+    }`;
+  };
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 flex justify-center px-4">
@@ -30,7 +40,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[14px] font-medium whitespace-nowrap text-[var(--text-muted)] transition-colors hover:text-[var(--accent)]"
+                className={linkClass(link.href)}
               >
                 {link.label}
               </Link>
@@ -68,7 +78,11 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block rounded-xl px-3 py-2.5 text-sm text-[var(--text-muted)] hover:bg-[var(--bg-soft)]"
+                    className={`block rounded-xl px-3 py-2.5 text-sm hover:bg-[var(--bg-soft)] ${
+                      pathname === link.href
+                        ? "font-semibold text-[var(--accent)]"
+                        : "text-[var(--text-muted)]"
+                    }`}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

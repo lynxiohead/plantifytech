@@ -24,22 +24,22 @@ export default function Footer() {
           <h4 className="display-title mb-4 text-sm text-[var(--text)]">Quick links</h4>
           <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
             <li>
-              <Link href="/#how-it-works" className="hover:text-[var(--accent)]">
+              <Link href="/investors" className="hover:text-[var(--accent)]">
                 How It Works
               </Link>
             </li>
             <li>
-              <Link href="/#about" className="hover:text-[var(--accent)]">
+              <Link href="/about" className="hover:text-[var(--accent)]">
                 About
               </Link>
             </li>
             <li>
-              <Link href="/#investors" className="hover:text-[var(--accent)]">
+              <Link href="/investors" className="hover:text-[var(--accent)]">
                 For Investors
               </Link>
             </li>
             <li>
-              <Link href="/#farmers" className="hover:text-[var(--accent)]">
+              <Link href="/farmers" className="hover:text-[var(--accent)]">
                 For Farmers
               </Link>
             </li>
@@ -50,8 +50,13 @@ export default function Footer() {
           <h4 className="display-title mb-4 text-sm text-[var(--text)]">Support</h4>
           <ul className="space-y-2.5 text-sm text-[var(--text-muted)]">
             <li>
-              <Link href="/contact#help" className="hover:text-[var(--accent)]">
+              <Link href="/help" className="hover:text-[var(--accent)]">
                 FAQs
+              </Link>
+            </li>
+            <li>
+              <Link href="/investor" className="hover:text-[var(--accent)]">
+                Investor Beta
               </Link>
             </li>
             <li>

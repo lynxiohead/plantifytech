@@ -1,0 +1,68 @@
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import StepFlow from "@/components/StepFlow";
+import CtaSection from "@/components/CtaSection";
+import { INVESTOR_STEPS } from "@/lib/content";
+import { SectionCopy, SectionEyebrow, SectionTitle } from "@/components/ui";
+import { IoCash, IoShieldCheckmark } from "react-icons/io5";
+
+export default function InvestorsPage() {
+  return (
+    <>
+      <Navbar />
+      <main className="sky-bg pt-28">
+        <section className="section-pad bg-white">
+          <div className="container">
+            <SectionEyebrow>For Investors</SectionEyebrow>
+            <SectionTitle className="mt-4">Start investing in minutes</SectionTitle>
+            <SectionCopy className="mt-4">
+              Browse vetted farm projects, invest any amount from R100, and track real
+              growth with AI powered insights.
+            </SectionCopy>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              <div className="stat-card p-6 md:p-7">
+                <span className="icon-circle">
+                  <IoShieldCheckmark size={22} />
+                </span>
+                <h3 className="display-title mt-5 text-[2rem] md:text-[2.4rem]">100%</h3>
+                <p className="mt-2 text-sm text-[var(--text-muted)]">
+                  Secure, encrypted data protection
+                </p>
+              </div>
+              <div className="stat-card p-6 md:p-7">
+                <span className="icon-circle">
+                  <IoCash size={22} />
+                </span>
+                <h3 className="display-title mt-5 text-[2rem] md:text-[2.4rem]">R100</h3>
+                <p className="mt-2 text-sm text-[var(--text-muted)]">
+                  Minimum amount to start investing
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 flex justify-center">
+              <Link href="/investor" className="btn-pill btn-pill-dark">
+                Join the investor beta
+                <span className="btn-arrow">→</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-pad bg-white pb-24">
+          <div className="container">
+            <StepFlow
+              label="How it works: For Investors"
+              steps={INVESTOR_STEPS}
+            />
+          </div>
+        </section>
+
+        <CtaSection />
+      </main>
+      <Footer />
+    </>
+  );
+}
