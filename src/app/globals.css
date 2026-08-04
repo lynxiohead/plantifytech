@@ -347,6 +347,14 @@ body {
   opacity: 0.96;
 }
 
+.mockup-tertiary {
+  position: absolute;
+  left: -6%;
+  bottom: 14%;
+  width: 34%;
+  opacity: 0.92;
+}
+
 .showcase-track {
   display: flex;
   gap: 1.25rem;

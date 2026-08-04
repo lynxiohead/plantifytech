@@ -2,17 +2,30 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ASSETS } from "@/lib/content";
 import { PillButton } from "./ui";
 
+function mockupAt(index: number, offset: number) {
+  const mockups = ASSETS.mockups;
+  return mockups[(index + offset + mockups.length) % mockups.length];
+}
+
 export default function Hero() {
   const [bgIndex, setBgIndex] = useState(0);
+  const [mockupIndex, setMockupIndex] = useState(0);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
       setBgIndex((current) => (current + 1) % ASSETS.hero.images.length);
     }, 6000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setMockupIndex((current) => (current + 1) % ASSETS.mockups.length);
+    }, 4200);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -90,14 +103,24 @@ export default function Hero() {
             className="relative z-10 mx-auto max-w-[380px]"
           >
             <div className="media-frame mockup-shell mockup-shell-primary">
-              <Image
-                src={ASSETS.mockups[0]}
-                alt="PlantifyTech investor dashboard on mobile"
-                width={520}
-                height={640}
-                priority
-                className="media-image media-image-contain mx-auto max-w-[340px] md:max-w-[360px]"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={mockupAt(mockupIndex, 0)}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.01 }}
+                  transition={{ duration: 0.45 }}
+                >
+                  <Image
+                    src={mockupAt(mockupIndex, 0)}
+                    alt="PlantifyTech mobile app screen"
+                    width={520}
+                    height={640}
+                    priority
+                    className="media-image media-image-contain mx-auto max-w-[340px] md:max-w-[360px]"
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
 
@@ -108,8 +131,8 @@ export default function Hero() {
           >
             <div className="media-frame mockup-shell mockup-shell-secondary">
               <Image
-                src={ASSETS.mockups[1]}
-                alt="PlantifyTech secure payment screen"
+                src={mockupAt(mockupIndex, 1)}
+                alt="PlantifyTech app feature screen"
                 width={280}
                 height={560}
                 className="media-image media-image-contain"
@@ -117,8 +140,40 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+            className="mockup-tertiary hidden lg:block"
+          >
+            <div className="media-frame mockup-shell mockup-shell-secondary">
+              <Image
+                src={mockupAt(mockupIndex, 2)}
+                alt="PlantifyTech app dashboard screen"
+                width={240}
+                height={520}
+                className="media-image media-image-contain"
+              />
+            </div>
+          </motion.div>
+
           <div className="absolute -left-6 top-12 hidden h-28 w-28 rounded-full bg-[var(--accent-light)]/20 blur-3xl lg:block" />
           <div className="absolute -right-4 bottom-16 hidden h-36 w-36 rounded-full bg-[var(--gold)]/25 blur-3xl lg:block" />
+
+          <div className="relative z-20 mt-6 flex flex-wrap items-center justify-center gap-2 px-2">
+            {ASSETS.mockups.map((mockup, index) => (
+              <button
+                key={mockup}
+                type="button"
+                aria-label={`Show app screen ${index + 1}`}
+                onClick={() => setMockupIndex(index)}
+                className={`h-2.5 rounded-full transition-all ${
+                  index === mockupIndex
+                    ? "w-7 bg-[var(--accent)]"
+                    : "w-2.5 bg-[var(--accent)]/25 hover:bg-[var(--accent)]/45"
+                }`}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

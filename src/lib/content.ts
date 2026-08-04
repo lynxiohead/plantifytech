@@ -5,6 +5,9 @@ export const ASSETS = {
   logoNav: asset("logos/EXTLOGO1-nav-transparent.png"),
   logoIcon: asset("logos/BLACK2.png"),
   logoMark: asset("logos/BLACK1.png"),
+  logoWhite: asset("logos/NEWLOGO_WHITE.png"),
+  logoStacked: asset("logos/PLANTIFY6.png"),
+  logoBadge: asset("logos/LOGO9.jpg"),
   hero: {
     primary: asset("hero/pexels-sammccool47-33786601.jpg"),
     images: [
@@ -18,6 +21,10 @@ export const ASSETS = {
     asset("mockups/MOCKUP1.png"),
     asset("mockups/MOCKUP2.png"),
     asset("mockups/MOCKUP3.png"),
+    asset("mockups/MOCKUP4.png"),
+    asset("mockups/MOCKUP5.png"),
+    asset("mockups/MOCKUP9.png"),
+    asset("mockups/MOCKUP11.png"),
   ],
   illustrations: {
     planting: asset("ILLUSTRATIONS/ILLUSTRATION1.jpg"),
@@ -65,21 +72,21 @@ export const INVESTOR_STEPS = [
     id: "01",
     title: "Browse farm projects",
     body: "Explore vetted farming projects that need funding.",
-    image: ASSETS.mockups[0],
+    image: ASSETS.mockups[3],
     imageFit: "contain" as const,
   },
   {
     id: "02",
     title: "Invest from R100",
     body: "Choose any amount from R100 and fund projects you believe in.",
-    image: ASSETS.mockups[1],
+    image: ASSETS.mockups[4],
     imageFit: "contain" as const,
   },
   {
     id: "03",
     title: "Track and earn returns",
     body: "Monitor real-time growth with AI insights and receive returns at harvest.",
-    image: ASSETS.mockups[2],
+    image: ASSETS.mockups[5],
     imageFit: "contain" as const,
   },
 ];
@@ -150,11 +157,11 @@ export const WHY_CARDS = [
   {
     label: "WE PROVIDE",
     title: "Capital for farmers",
-    image: ASSETS.hero.images[1],
+    image: ASSETS.slides[4],
   },
   {
     label: "WE PROVIDE",
     title: "Exposure for farm projects",
-    image: ASSETS.hero.images[3],
+    image: ASSETS.slides[5],
   },
 ];
