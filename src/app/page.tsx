@@ -1,14 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
-import ShowcaseGallery from "@/components/ShowcaseGallery";
 import AudienceSection from "@/components/AudienceSection";
 import TrustStrip from "@/components/TrustStrip";
-import RegionsStrip from "@/components/RegionsStrip";
 import QuoteSection from "@/components/QuoteSection";
 import WhyChoose from "@/components/WhyChoose";
-import MediaSection from "@/components/MediaSection";
-import SeoDiscoverySection from "@/components/SeoDiscoverySection";
+import WorldPresenceMap from "@/components/WorldPresenceMap";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
@@ -42,14 +39,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <HowItWorks />
-        <ShowcaseGallery />
         <AudienceSection />
         <TrustStrip />
-        <RegionsStrip />
         <QuoteSection />
         <WhyChoose />
-        <MediaSection />
-        <SeoDiscoverySection />
+        <WorldPresenceMap />
         <CtaSection />
       </main>
       <Footer />

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+import SocialLinks from "./SocialLinks";
 import { IoMail, IoCall, IoLocation } from "react-icons/io5";
 
 export default function ContactForm() {
@@ -228,6 +229,13 @@ export function ContactInfo() {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={0.24}>
+          <div className="mt-10 text-center">
+            <p className="text-sm text-[var(--text-muted)]">Follow Plantify Tech</p>
+            <SocialLinks className="mt-4 flex justify-center gap-4 text-[var(--text-muted)]" />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

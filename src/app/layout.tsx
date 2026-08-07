@@ -9,6 +9,7 @@ import {
 import JsonLd from "@/components/JsonLd";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Bricolage_Grotesque, Inter } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA" className={`${inter.variable} ${bricolage.variable} h-full`}>
       <body className="min-h-full antialiased">
+        <SmoothScroll />
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <GoogleAnalytics />
         {children}

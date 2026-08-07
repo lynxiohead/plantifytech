@@ -9,6 +9,25 @@ export const SITE_EMAIL = "hello@plantify.tech";
 export const SITE_PHONE = "+27824878855";
 export const SITE_LOCALE = "en_ZA";
 
+export const SOCIAL_LINKS = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/plantify.tech?igsh=eWsxc3Q2M3FpeWJ6",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/plantify-lynxio-tech/",
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@plantify.tech?_r=1&_t=ZS-98bqkrwgf13",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/plantify.tech/",
+  },
+] as const;
+
 /** Core keywords — agricultural investment & fintech discovery (Easy Equities-style intent). */
 export const CORE_KEYWORDS = [
   "farm investment",
@@ -222,9 +241,7 @@ export function organizationSchema() {
       { "@type": "Country", name: "Mozambique" },
       { "@type": "Country", name: "Zimbabwe" },
     ],
-    sameAs: [
-      "https://www.linkedin.com/company/plantifytech",
-    ],
+    sameAs: SOCIAL_LINKS.map((link) => link.href),
   };
 }
 

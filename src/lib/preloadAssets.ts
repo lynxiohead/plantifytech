@@ -4,6 +4,8 @@ function collectImageUrls(): string[] {
   const urls = new Set<string>([
     ASSETS.logo,
     ASSETS.logoNav,
+    ASSETS.logoHero,
+    ASSETS.hero.hero2,
     ASSETS.logoIcon,
     ASSETS.logoMark,
     ASSETS.hero.primary,

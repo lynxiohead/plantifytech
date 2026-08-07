@@ -9,26 +9,34 @@ import { SITE_NAME } from "@/lib/seo";
 type PillButtonProps = {
   href: string;
   label: string;
-  variant?: "dark" | "light";
+  variant?: "green" | "light" | "dark";
   className?: string;
+  onClick?: () => void;
 };
 
 export function PillButton({
   href,
   label,
-  variant = "dark",
+  variant = "green",
   className = "",
+  onClick,
 }: PillButtonProps) {
+  const tone =
+    variant === "light"
+      ? "btn-pill-gloss-inner btn-pill-gloss-light"
+      : variant === "dark"
+        ? "btn-pill-gloss-inner btn-pill-gloss-dark"
+        : "btn-pill-gloss-inner btn-pill-gloss-green";
+
   return (
-    <Link
-      href={href}
-      className={`btn-pill ${variant === "dark" ? "btn-pill-dark" : "btn-pill-light"} ${className}`}
-    >
-      {label}
-      <span className="btn-arrow">
-        <IoArrowForward size={14} />
-      </span>
-    </Link>
+    <span className={`btn-pill-gloss ${className}`}>
+      <Link href={href} className={`${tone} btn-pill-gloss-link`} onClick={onClick}>
+        <span className="btn-label">{label}</span>
+        <span className="btn-arrow" aria-hidden="true">
+          <IoArrowForward size={14} />
+        </span>
+      </Link>
+    </span>
   );
 }
 
@@ -61,13 +69,17 @@ export function SectionTitle({
 export function SectionCopy({
   children,
   className = "",
+  align = "center",
 }: {
   children: React.ReactNode;
   className?: string;
+  align?: "center" | "left";
 }) {
   return (
     <p
-      className={`mx-auto max-w-2xl text-center text-[15px] leading-relaxed text-[var(--text-muted)] md:text-base ${className}`}
+      className={`max-w-2xl text-[15px] leading-relaxed text-[var(--text-muted)] md:text-base ${
+        align === "center" ? "mx-auto text-center" : "text-left"
+      } ${className}`}
     >
       {children}
     </p>
@@ -101,9 +113,9 @@ export function FramerLogo({
       <Image
         src={ASSETS.logoNav}
         alt={SITE_NAME}
-        width={280}
-        height={64}
-        className={`h-full w-auto max-w-none object-contain ${className}`}
+        width={440}
+        height={116}
+        className={`h-full w-auto max-w-none object-contain object-left ${className}`}
         priority
       />
     );

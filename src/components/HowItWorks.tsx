@@ -56,7 +56,7 @@ export default function HowItWorks() {
           steps={INVESTOR_STEPS}
         />
 
-        <div className="mt-24 border-t border-black/5 pt-24">
+        <div className="how-it-works-split mt-10 border-t border-black/5 pt-10 md:mt-24 md:pt-24">
           <StepFlow
             id="farmers"
             label="How it works: For Farmers"

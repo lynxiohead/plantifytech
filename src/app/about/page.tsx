@@ -1,8 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AudienceSection from "@/components/AudienceSection";
-import QuoteSection from "@/components/QuoteSection";
-import WhyChoose from "@/components/WhyChoose";
+import AboutSections from "@/components/AboutSections";
 import CtaSection from "@/components/CtaSection";
 import JsonLd from "@/components/JsonLd";
 import { buildMetadata, breadcrumbSchema, PAGE_SEO, webPageSchema } from "@/lib/seo";
@@ -25,9 +23,7 @@ export default function AboutPage() {
       />
       <Navbar />
       <main className="pt-28">
-        <AudienceSection />
-        <QuoteSection />
-        <WhyChoose />
+        <AboutSections />
         <CtaSection />
       </main>
       <Footer />

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
+import TypingRotator from "./TypingRotator";
 import { SectionTitle } from "./ui";
-import { WHY_CARDS, ASSETS } from "@/lib/content";
+import { WHY_CARDS, WHY_TYPING_PHRASES, ASSETS } from "@/lib/content";
 
 export default function WhyChoose() {
   const partners = [...ASSETS.partners, ...ASSETS.partners];
@@ -13,6 +14,15 @@ export default function WhyChoose() {
       <div className="container">
         <ScrollReveal>
           <SectionTitle>Why choose Plantify Tech?</SectionTitle>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.06}>
+          <div className="why-typing-block">
+            <p className="why-typing-static">We provide</p>
+            <p className="why-typing-dynamic">
+              <TypingRotator phrases={WHY_TYPING_PHRASES} />
+            </p>
+          </div>
         </ScrollReveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -43,8 +53,6 @@ export default function WhyChoose() {
           </p>
 
           <div className="relative mt-8 overflow-hidden md:hidden">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[var(--bg-soft)] to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[var(--bg-soft)] to-transparent" />
             <div className="partners-marquee-track gap-10 px-2">
               {partners.map((partner, index) => (
                 <div
@@ -54,9 +62,9 @@ export default function WhyChoose() {
                   <Image
                     src={partner.src}
                     alt={partner.name}
-                    width={140}
-                    height={48}
-                    className="h-10 w-auto max-w-[120px] object-contain opacity-80 grayscale"
+                    width={280}
+                    height={104}
+                    className="h-20 w-auto max-w-[260px] object-contain sm:h-24 sm:max-w-[300px]"
                   />
                 </div>
               ))}
@@ -69,9 +77,9 @@ export default function WhyChoose() {
                 key={partner.name}
                 src={partner.src}
                 alt={partner.name}
-                width={140}
-                height={48}
-                className="h-9 w-auto max-w-[120px] object-contain opacity-75 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 md:h-11 md:max-w-[140px]"
+                width={200}
+                height={72}
+                className="h-12 w-auto max-w-[160px] object-contain transition-transform duration-300 hover:scale-105 md:h-14 md:max-w-[180px]"
               />
             ))}
           </div>
@@ -79,4 +87,5 @@ export default function WhyChoose() {
       </div>
     </section>
   );
+
 }

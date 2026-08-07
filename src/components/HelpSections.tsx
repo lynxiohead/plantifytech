@@ -56,7 +56,7 @@ export function FaqGroups() {
             <p className="text-(--text-muted)">
               Reach out, and our team will guide you.
             </p>
-            <PillButton href="/contact" label="Talk to our team" variant="dark" />
+            <PillButton href="/contact" label="Talk to our team" variant="green" />
           </div>
         </ScrollReveal>
       </div>

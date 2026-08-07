@@ -1,11 +1,12 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StepFlow from "@/components/StepFlow";
+import TrustStrip from "@/components/TrustStrip";
+import QuoteSection from "@/components/QuoteSection";
 import CtaSection from "@/components/CtaSection";
 import JsonLd from "@/components/JsonLd";
 import { INVESTOR_STEPS } from "@/lib/content";
-import { SectionCopy, SectionEyebrow, SectionTitle } from "@/components/ui";
+import { PillButton, SectionCopy, SectionEyebrow, SectionTitle } from "@/components/ui";
 import {
   buildMetadata,
   breadcrumbSchema,
@@ -65,13 +66,12 @@ export default function InvestorsPage() {
             </div>
 
             <div className="mt-10 flex justify-center">
-              <Link href="/investor" className="btn-pill btn-pill-dark">
-                Join the investor beta
-                <span className="btn-arrow">→</span>
-              </Link>
+              <PillButton href="/investor" label="Join the investor beta" variant="dark" />
             </div>
           </div>
         </section>
+
+        <TrustStrip />
 
         <section className="section-pad bg-white pb-24">
           <div className="container">
@@ -79,6 +79,7 @@ export default function InvestorsPage() {
           </div>
         </section>
 
+        <QuoteSection />
         <CtaSection />
       </main>
       <Footer />
